@@ -1,0 +1,34 @@
+SHELL = /bin/sh
+SUBDIRS = src
+DISTNAME = @PACKAGE_NAME@-@PACKAGE_VERSION@
+
+all:
+	@list='$(SUBDIRS)'; for subdir in $$list; do \
+		$(MAKE) -C $$subdir all ; done
+
+clean:
+	rm -f *~ *.bak
+	@list='$(SUBDIRS)'; for subdir in $$list; do \
+		$(MAKE) -C $$subdir clean ; done
+
+distclean:clean
+	rm -Rf config.* Makefile src/config.h src/Makefile autom4te.cache
+
+dist:distclean
+	mkdir ../$(DISTNAME)
+	cp -R src ../$(DISTNAME)
+	cp Changelog configure.ac install-sh README ../$(DISTNAME)
+	cp configure COPYING Makefile.in ../$(DISTNAME)
+	tar -zcf ../$(DISTNAME).tar.gz ../$(DISTNAME)
+	rm -R ../$(DISTNAME)
+
+devclean:distclean
+	rm -f configure
+
+install:
+	@list='$(SUBDIRS)'; for subdir in $$list; do \
+		$(MAKE) -C $$subdir install ; done
+
+uninstall:
+	@list='$(SUBDIRS)'; for subdir in $$list; do \
+		$(MAKE) -C $$subdir uninstall ; done

@@ -1,0 +1,30 @@
+2015-09-06 Avraham Lembke <blambi@chebab.com>
+	* Moved to github
+	* Released: v0.2.6
+
+2009-07-27  Avraham Lembke <blambi@chebab.com>
+	* Added: inline help and a invert command
+	* Change: moved to functionpointers instead of swiches in wrapper ui.
+	* Released: v0.2.5
+
+2008-07-30  Avraham Lembke <blambi@chebab.com>
+	* Released: v0.2.4
+
+2007-10-28  Avraham Lembke <blambi@chebab.com>
+	* Released: v0.2.3
+
+2007-06-21  Avraham Lembke <blambi@chebab.com>
+	* Added/Finished: GTK+ 2.x ui
+	* Released: v0.1.3
+
+2007-05-12  Avraham Lembke <blambi@chebab.com>
+	* Released: v0.0.2
+
+2007-05-11  Avraham Lembke <blambi@chebab.com>
+	* Added: readline ui
+
+2007-05-09  Avraham Lembke <blambi@chebab.com>
+	* Change: moved to autoconf
+
+2007-05-05  Avraham Lembke <blambi@chebab.com>
+	* Released: v0.0.1

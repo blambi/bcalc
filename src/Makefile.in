@@ -1,0 +1,27 @@
+TARGET = bcalc
+SRCS = bcalc.c text-ui.c wraper-ui.c drmath.c curses-ui.c readline-ui.c \
+gtk2-ui.c
+
+CC = @CC@
+LD = gcc
+
+CFLAGS = @CFLAGS@ -std=gnu99 -Wall -pedantic -D_GNU_SOURCE -g
+LDFLAGS = @LDFLAGS@ @LIBS@
+
+OBJS = $(SRCS:.c=.o)
+
+PREFIX ?= @prefix@
+
+all:$(TARGET)
+
+$(TARGET):$(OBJS)
+	$(LD) -o $@ $^ $(LDFLAGS)
+
+%.o:%.c
+	$(CC) -c $< $(CFLAGS)
+
+install:all
+	@INSTALL@ -m 755 bcalc $(PREFIX)/bin/
+
+clean:
+	rm -f $(TARGET) *.o *~ *.bak

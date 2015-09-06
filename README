@@ -1,0 +1,47 @@
+Readme for bcalc
+
+bcalc is developed to be a multi ui simplistic RPN calculator.
+
+installation note:
+  the configure script is able to enable/disable ui's, the exception is
+  the text ui.
+  see ./configure --help for more information.
+
+  if readline-ui is included it will be default, if not text-ui will.
+
+Operands:
+  +,-   normal
+  *,/   -""-
+  !     faculty (requires only one element)
+  ^     powers
+  sqrt  square root
+  %     mod
+
+Commands: (in bcalc)
+  p   print top value
+  s   print stack
+  d   delete top value
+  q   quit
+  c   clear stack
+  a   repeats last operation on all the stack
+  i   invert multiplies top value with -1
+  h   prints a little help text
+
+available interfaces:
+  text     - just a text interface (printf etc).
+  curses   - a curses based ui
+  readline - readline input else as text
+  gtk2     - GTK 2.x based ui
+
+Notes:
+  ',' and '.' are handled the same way.
+
+  Since v0.2.3 spaces both:
+    55
+    66
+    +
+
+  and:
+    55 66 +
+
+  are valid input methods.
